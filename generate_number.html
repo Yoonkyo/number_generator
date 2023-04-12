@@ -9,12 +9,16 @@
 <script>
 	let result;
 	let num = prompt("1부터 몇까지 출력할까요?", 3);
-	num = parseInt(num); // 문자열을 숫자로 바꿈
 	if(num == null) { 
 	// 취소 버튼이나 다이얼로그를 닫은 경우
 		alert("프로그램을 종료합니다.");
 	}
 	else{
+		num = parseInt(num); // 문자열을 숫자로 바꿈
+		while(num <= 0){
+			num = prompt("0 이상의 정수를 입력하세요", 3);
+			num = parseInt(num)
+		}
 		let count = prompt("몇 번 출력할까요?", 5);
 		count = parseInt(count);
 		for(let i=1; i<=count; i++) { 

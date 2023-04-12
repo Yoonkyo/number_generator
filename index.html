@@ -5,7 +5,9 @@
 <title>Number Generator</title></head>
 <body>
 <h3>숫자 생성기 for 성익</h3>
+<button id="myButton">복사하기</button>
 <hr>
+<div id="myDiv">
 <script>
 	let result;
 	let num = prompt("1부터 몇까지 출력할까요?", 3);
@@ -21,12 +23,26 @@
 		}
 		let count = prompt("몇 번 출력할까요?", 5);
 		count = parseInt(count);
+
+		let result = '';
 		for(let i=1; i<=count; i++) { 
 			for(let j=1; j<=num; j++) {
 				document.write(j + "<br>");
+				result += j.toString()+"\n";
 			}
-		}  
+		}
+		;
+
+		// button 클릭 이벤트
+		document.getElementById("myButton").onclick = () => {
+		window.navigator.clipboard.writeText(result).then(() => {
+			// 복사가 완료되면 호출된다.
+			alert("복사완료");
+		});
+		};
+
 	}
 </script>
+</div>
 </body>
 </html>

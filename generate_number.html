@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Number Generator</title></head>
+<body>
+<h3>숫자 생성기 for 성익</h3>
+<hr>
+<script>
+	let result;
+	let num = prompt("1부터 몇까지 출력할까요?", 3);
+	num = parseInt(num); // 문자열을 숫자로 바꿈
+	if(num == null) { 
+	// 취소 버튼이나 다이얼로그를 닫은 경우
+		alert("프로그램을 종료합니다.");
+	}
+	else{
+		let count = prompt("몇 번 출력할까요?", 5);
+		count = parseInt(count);
+		for(let i=1; i<=count; i++) { 
+			for(let j=1; j<=num; j++) {
+				document.write(j + "<br>");
+			}
+		}  
+	}
+</script>
+</body>
+</html>
